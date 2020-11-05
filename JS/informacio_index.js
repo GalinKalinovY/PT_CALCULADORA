@@ -47,6 +47,9 @@ function funcInformacio() {
   alert("Nom del navegador:  "+navigator.appName+ "\n"
   +"Versió del navegador:  "+navigator.userAgent + "\n"
   +"Sistema operatiu utlitzat:  "+OSName + "\n"
-  +"Idioma: "+navigator.lanuage);
+  +"Darrera actulització del document: "+ document.lastModified + "\n"
+  +"Idioma: "+navigator.language+ "\n"
+  +"Informació del hostname: "+window.location.protocol+ ", "
+  +window.location.host +", "+ window.location.origin+ ", "+ window.location.pathname);
 
 }
