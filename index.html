@@ -8,12 +8,10 @@
       <meta name="keywords" content="html,cheatsheet" />
       <meta property="fb:admins" content="YourFacebookUsername" />
       <title>PRACTICA CALCULADORES</title>
-      <script src="JS/informacio_index.js"> </script>
       <link rel="stylesheet" href="CSS/normalised.css">
       <link rel="stylesheet" href="CSS/css_index.css">
     </head>
     <body>
-
         <p id="paragraf">Venguingud@ a la web Calculadores, tria quina Calculadora vols utilitzar.</p>
 
         <ul>
@@ -21,8 +19,12 @@
           <li><a href="HTML/calc_cientifica.html">Calculadora Cientifica</a></li>
         </ul>
         <br>
-        <button type="button" onclick="Funcio()">Informacio</button>
-        <button onclick="this.innerHTML=Date()">L’hora és ...</button>
 
+        <form>
+          <input type="button" value="Informacio" onclick="funcInformacio()"/>
+        </form>
+        <script type="text/javascript" src="JS/informacio_index.js">
+        </script>
+        
     </body>
 </html>
