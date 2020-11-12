@@ -1,33 +1,16 @@
-function showresult(choise){
+function dis(val){
+//el parametre val aporta el valor que hem clicat.
+        document.getElementById("resultat").value+=val
+}
 
-var n1=parseFloat(document.getElementById('num1').value);
-var n2=parseFloat(document.getElementById('num2').value);
-var r;
-var c=choise;
+// funcio mira el valor que hem clicat i retorna el resultat.
+function resoldre(){
+        let x = document.getElementById("resultat").value
+        let y = eval(x)
+        document.getElementById("resultat").value = y
+}
 
-  switch(c)
-  	{
-  	case '1':
-  		r=n1+n2;
-  		break;
-  	case '2':
-  		r=n1-n2;
-  		break;
-  	case '3':
-  		r=n1*n2;
-  		break;
-  	case '4':
-  		r=n1/n2;
-  		break;
-  	case '5':
-  		r=n2*100/n1;
-  		break;
-  	default:
-  		break;
-
-  	}
-document.getElementById('result').value=r;
-
-
-
+//neteijem la pantalla de la calculadora.
+function clr(){
+        document.getElementById("resultat").value = ""
 }
