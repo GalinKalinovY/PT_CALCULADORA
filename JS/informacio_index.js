@@ -6,7 +6,7 @@ var majorVersion = parseInt(navigator.appVersion,10);
 var nameOffset,verOffset,ix;
 var OSName="Unknown OS";
 
-// In Opera, the true version is after "Opera" or after "Version"
+// En opera la versio es despres de opera o de version.
 if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
  browserName = "Opera";
  fullVersion = nAgt.substring(verOffset+6);
@@ -18,30 +18,30 @@ else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
  browserName = "Microsoft Internet Explorer";
  fullVersion = nAgt.substring(verOffset+5);
 }
-// In Chrome, the true version is after "Chrome"
+// la versio en chrome es despres de chrome.
 else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
  browserName = "Chrome";
  fullVersion = nAgt.substring(verOffset+7);
 }
-// In Safari, the true version is after "Safari" or after "Version"
+// en safari la versio es troba despres de version.
 else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
  browserName = "Safari";
  fullVersion = nAgt.substring(verOffset+7);
  if ((verOffset=nAgt.indexOf("Version"))!=-1)
    fullVersion = nAgt.substring(verOffset+8);
 }
-// In Firefox, the true version is after "Firefox"
+// a Firefox la veriso es troba just despres de Firefox
 else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
  browserName = "Firefox";
  fullVersion = nAgt.substring(verOffset+8);
 }
-
+//averiguem quin sistema operatiu utilitzem
 if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
 if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
 if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
 if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
 
-
+//funcio que mostra tota la informacio
 function funcInformacio() {
 
   alert("Nom del navegador:  "+navigator.appName+ "\n"
