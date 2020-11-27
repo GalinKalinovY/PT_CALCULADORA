@@ -4,7 +4,10 @@ var operadors = [];//arraylist on tindrem els valors clicats
 var operacions =[];//arraylist on tinrem les operacions
 var operadorActual="";
 const max_length = 8;
-var operacioCompleta = concat(operadors, operacions);
+var operacioCompleta = [];
+
+var resultatOperacio = [];
+
 
 function dis(val){
   //el parametre val aporta el valor que hem clicat en cada boto.
@@ -34,48 +37,63 @@ function disPunt(val){
           document.getElementById("resultat").value = operadorActual;
         }else{
             console.log("Error mes de 1 punt.");
+            alert("Recorda només pots posar 1 punt.");
         }
 }
 
 function operacio(val){
     console.log(" Operacions abans", operadors.length, operacions.length);
 
-if ( operadors.length  == (operacions.length +1) ){
-    console.log("operacions despres", operadors.length, operacions.length);
-    console.log("error massa operacions");
-}else{
+      if ( operadors.length  == (operacions.length +1) ){
+            console.log("operacions despres", operadors.length, operacions.length);
+            console.log("error massa operacions");
+      }else{
 
-  if (operadorActual != "") {
-    operadors.push(operadorActual);
-    operacions.push(val);
-  }else{
-    console.log("operadorActual 0 ",operadorActual);
-  }
-  //operadors.push(operadorActual);
-
-  operadorActual="";
-  console.log("hem clicat operacio", operadors, " ,,",operacions, " ,,",operadorActual);
+          if (operadorActual != "") {
+              operadors.push(operadorActual);
+              operacions.push(val);
+          }else{
+              console.log("operadorActual 0 ",operadorActual);
+              alert("Massa operacions clicades!.");
+          }
+            operadorActual="";
+            console.log("hem clicat operacio", operadors, " ,,",operacions, " ,,",operadorActual);
+      }
 }
-  }
-
 // funcio mira el valor que hem clicat i retorna el resultat.
 function resoldre(){
-
-        let i = 0;
-        let j = 0;
         let resultatTemp;
-        while(operadors[i] && operacions[j] !=""){
-            for(let x=0;x < operadors.length; x++){
-              console.log("for de operadors ",operadors);
-            }
-              for(let x1=0; x1 < operacions.length; x1++){
-                console.log("for de operadors ",operacions);
+        let i=0;
 
-              }
+            if(operadors[i] === resultatTemp){
+                operacioCompleta = operadorActual + operacions;
+                operacioCompleta += operadorActual;
+                resultatTemp = eval(operacioCompleta);
+                document.getElementById("resultat").value = resultatTemp;
+            }else{
+                operacioCompleta = operadors + operacions;
+                operacioCompleta += operadorActual;
 
-            i += 1;
-            j += 1;
-        }
+                resultatTemp = eval(operacioCompleta);
+                document.getElementById("resultat").value = resultatTemp;
+                //resultat += y;
+                console.log("operacioCompleta: ",operacioCompleta);
+                console.log("operadors: ",operadors);
+                console.log("operacions: ",operacions);
+                operadorActual = resultatTemp;
+                operadors.push(operadorActual);
+                console.log("operadorActual: ",operadorActual);
+            i+=1;
+          }
+          operacions=[];
+          operadors=[];
+          //}
+
+
+
+        //    i += 1;
+          //  j += 1;
+        //}
 
 
 
