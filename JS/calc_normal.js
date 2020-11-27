@@ -3,7 +3,7 @@
 var operadors = [];//arraylist on tindrem els valors clicats
 var operacions =[];//arraylist on tinrem les operacions
 var operadorActual="";
-const max_length = 8;
+const max_length = 5;
 var operacioCompleta = [];
 
 var resultatOperacio = [];
@@ -23,7 +23,7 @@ function dis(val){
           document.getElementById("resultat").value = operadorActual;
     }else{
       alert("El numero maxim de caracters que pots introduïr es de 5");
-      console.log("Error numero massa llarg.");
+      console.log("Error numero massa llarg.",operadorActual.length);
     }
 
 
@@ -120,7 +120,26 @@ function clr(){
 
 
 
+function guardar() {
+  var alc = document.getElementById("alcada").value;
+  var amp = document.getElementById("amplada").value;
+  /*Guardem les dades en el localStorage*/
+  localStorage.setItem("alcada", alc);
+  localStorage.setItem("amplada", amp);
+  /*netegem el camp*/
+  document.getElementById("alcada").value = "";
+  document.getElementById("amplada").value = "";
+}
+function carregar() {
+  var alc = localStorage.getItem("alcada");
+  var amp = localStorage.getItem("amplada");
+  var taula = document.getElementById("taulaCalculadora");
+  taula.style.width = alc+ "px";
+  taula.style.height = amp+ "px";
 
+  document.getElementById("alcada").value = alc;
+  document.getElementById("amplada").value = amp;
+}
 
 
 /*

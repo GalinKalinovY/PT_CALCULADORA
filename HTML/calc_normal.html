@@ -15,14 +15,23 @@
     </head>
     <body>
       <h1>Calculadora Normal</h1>
+        <!-- Demanem els valors-->
+        <h3>Canviar les propietats de la taula:</h3>
+      <form>
+        <input type="text"  placeholder="Alçada" id="alcada">
+        <br/>
+        <input type="text"  placeholder="Amplada" id="amplada"><br/>
+      </form>
 
-
-
-      <table border="1">
+      <button onclick="guardar()">Guardar</button>
+      <button onclick="carregar()">Carregar</button>
+      <br><br><br><br>
+      <!-- Comença la taula de la calculadora-->
+      <table  id="taulaCalculadora">
            <tr>
               <td colspan="3"><input type="text" id="resultat"/></td>
-              <!-- clr() sera una funcio que esborri el valor de la casella -->
 
+              <!-- clr() sera una funcio que esborri el valor de la casella -->
               <td><input type="button" value="c" onclick="clr()"/> </td>
            </tr>
            <tr>

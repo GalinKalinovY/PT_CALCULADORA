@@ -1,9 +1,15 @@
-body{
-  background-color: blue;
-}
+
 
 input[type="button"]
     {
       color: black;
       width:100%
     }
+body #taulaCalculadora{
+  width: 200px;
+  height: 200px;
+  border: 1px solid;
+  margin-left: auto;
+  margin-right: auto;
+
+}
