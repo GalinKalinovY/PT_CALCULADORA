@@ -53,3 +53,8 @@ function funcInformacio() {
   +window.location.host +", "+ window.location.origin+ ", "+ window.location.pathname);
 
 }
+
+
+function getResolution(){
+    alert("Your screen resolution is: " + window.screen.width * window.devicePixelRatio + "x" + window.screen.height * window.devicePixelRatio);
+}

@@ -1,15 +1,48 @@
+@media only screen and (max-width: 600px) {
+  body {
+    position: absolute;
+    background-color: red;
+  }
+}
 
+body{
+  position: static;
+  display: block;
+  background-color: grey;
+}
 
 input[type="button"]
     {
       color: black;
       width:100%
     }
-body #taulaCalculadora{
+
+div{
+    z-index: 1;
+    border-style: dotted;
+}
+section{
+  border-style: dotted;
+
+}
+section #taulaCalculadora{
+  table-layout: auto;
+  margin-top: 1%;
   width: 200px;
   height: 200px;
   border: 1px solid;
-  margin-left: auto;
-  margin-right: auto;
-
+  position: absolute;
+  left : 20px;
+  bottom: 20px;
+  background-color: #c2c2c2;
+  z-index: 2;
+}
+h1{
+  font-family: verdana;
+  font-style: italic;
+  color: #e0e0ce;
+}
+h3{
+  font-family: verdana;
+  color: #e0e0ce;
 }

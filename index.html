@@ -10,6 +10,8 @@
       <title>PRACTICA CALCULADORES</title>
       <link rel="stylesheet" href="CSS/normalised.css">
       <link rel="stylesheet" href="CSS/css_index.css">
+      <script type="text/javascript" src="JS/informacio_index.js">
+      </script>
     </head>
     <body>
         <p id="paragraf">Venguingud@ a la web Calculadores, tria quina Calculadora vols utilitzar.</p>
@@ -17,14 +19,10 @@
         <ul>
           <li><a href="HTML/calc_normal.html">Calculadora</a></li>
           <li><a href="HTML/calc_cientifica.html">Calculadora Cientifica</a></li>
+          <li><a value="Informacio" onclick="funcInformacio()">Informacio</a></li>
+          <li><a value="resolucio" onclick="getResolution()">Configuracio</a></li>
         </ul>
         <br>
-
-        <form>
-          <input type="button" value="Informacio" onclick="funcInformacio()"/>
-        </form>
-        <script type="text/javascript" src="JS/informacio_index.js">
-        </script>
 
         <button onclick="window.history.back();"> < </button>
         <button onclick="window.history.forward();"> > </button>

@@ -9,6 +9,7 @@ var operacioCompleta = [];
 var resultatOperacio = [];
 
 
+
 function dis(val){
   //el parametre val aporta el valor que hem clicat en cada boto.
   //document.getElementById("resultat").value+=val
@@ -87,19 +88,6 @@ function resoldre(){
           }
           operacions=[];
           operadors=[];
-          //}
-
-
-
-        //    i += 1;
-          //  j += 1;
-        //}
-
-
-
-        /*let x = operadorActual;
-        let y = eval(x);
-        document.getElementById("resultat").value = y*/
 }
 
 function dividir(val) {//agafe tots els numeros anteriors al signe de dividir.
@@ -120,25 +108,38 @@ function clr(){
 
 
 
+
 function guardar() {
+  var resoluciox = window.screen.width * window.devicePixelRatio;
+  var resolucioy = window.screen.height * window.devicePixelRatio;
   var alc = document.getElementById("alcada").value;
   var amp = document.getElementById("amplada").value;
-  /*Guardem les dades en el localStorage*/
-  localStorage.setItem("alcada", alc);
-  localStorage.setItem("amplada", amp);
+
+  if((resoluciox /2) >= alc && (resolucioy/2)>= amp){
+    /*Guardem les dades en el localStorage*/
+    localStorage.setItem("alcada", alc);
+    localStorage.setItem("amplada", amp);
+    console.log("resoluciox maxima: ",resoluciox/2);
+    console.log("resolucioy maxima: ",resolucioy/2);
+  }else{
+    console.log("resolucio massa gran per poder redimencionar");
+    alert("Resolució massa gran per poder posicionar la taula!");
+  }
   /*netegem el camp*/
   document.getElementById("alcada").value = "";
   document.getElementById("amplada").value = "";
 }
+
 function carregar() {
   var alc = localStorage.getItem("alcada");
   var amp = localStorage.getItem("amplada");
   var taula = document.getElementById("taulaCalculadora");
-  taula.style.width = alc+ "px";
-  taula.style.height = amp+ "px";
+  taula.style.left = alc+"px";
+  taula.style.bottom = amp+"px";
 
   document.getElementById("alcada").value = alc;
   document.getElementById("amplada").value = amp;
+
 }
 
 
