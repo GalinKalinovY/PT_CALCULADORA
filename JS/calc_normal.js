@@ -9,6 +9,7 @@ var operacioCompleta = [];
 var resultatOperacio = [];
 
 
+
 function dis(val){
   //el parametre val aporta el valor que hem clicat en cada boto.
   //document.getElementById("resultat").value+=val
@@ -44,12 +45,12 @@ function disPunt(val){
 function operacio(val){
     console.log(" Operacions abans", operadors.length, operacions.length);
 
-      if ( operadors.length  == (operacions.length +1) ){
+      if ( operadors.length  === (operacions.length +1) ){
             console.log("operacions despres", operadors.length, operacions.length);
             console.log("error massa operacions");
       }else{
 
-          if (operadorActual != "") {
+          if (operadorActual !== "") {
               operadors.push(operadorActual);
               operacions.push(val);
           }else{
@@ -99,9 +100,9 @@ function dividir(val) {//agafe tots els numeros anteriors al signe de dividir.
 
 //neteijem la pantalla de la calculadora.
 function clr(){
-        document.getElementById("resultat").value = ""
+        document.getElementById("resultat").value = "";
         operadorActual="";
-        operadors = []
+        operadors = [];
         operacions = [];
 }
 
@@ -133,8 +134,8 @@ function carregar() {
   var alc = localStorage.getItem("alcada");
   var amp = localStorage.getItem("amplada");
   var taula = document.getElementById("taulaCalculadora");
-  taula.style.background-position-x = alc+"px";
-  taula.style.background-position-y = amp+"px";
+  taula.style.bottom = alc+"px";
+  taula.style.left = amp+"px";
 
   document.getElementById("alcada").value = alc;
   document.getElementById("amplada").value = amp;

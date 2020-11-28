@@ -8,7 +8,7 @@
 body{
   position: static;
   display: block;
-  background-color: grey;
+  background-color: #778391;
 }
 
 input[type="button"]
@@ -22,24 +22,24 @@ div{
     border-style: dotted;
 }
 
-section #taulaCalculadora{
+section #taulaCalculadoraCientifica{
   table-layout: auto;
   margin-top: 1%;
   width: 200px;
   height: 200px;
   border: 1px solid;
   position: absolute;
-  background-position-x : 20px;
-  background-position-y: 20px;
-  background-color: #c2c2c2;
+  bottom : 200px;
+  left: 20px;
+  background-color: #73769e;
   z-index: 2;
 }
 h1{
   font-family: verdana;
   font-style: italic;
-  color: #e0e0ce;
+  color: #e8d4ac;
 }
 h3{
   font-family: verdana;
-  color: #e0e0ce;
+  color: #e8d4ac;
 }

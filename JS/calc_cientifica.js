@@ -1,5 +1,3 @@
-
-
 var operadors = [];//arraylist on tindrem els valors clicats
 var operacions =[];//arraylist on tinrem les operacions
 var operadorActual="";
@@ -13,7 +11,7 @@ function dis(val){
 
     if (operadorActual.length < max_length) { //si hi ha mes de 5 caracters
           operadorActual += val;
-          document.getElementById("resultat").value = operadorActual;
+          document.getElementById("resultatCientific").value = operadorActual;
     }else{
       alert("El numero maxim de caracters que pots introduïr es de 5");
       console.log("Error numero massa llarg.",operadorActual.length);
@@ -27,7 +25,7 @@ function disPunt(val){
         console.log("El numero de punts: ",res);
         if(res === null){
           operadorActual += val;
-          document.getElementById("resultat").value = operadorActual;
+          document.getElementById("resultatCientific").value = operadorActual;
         }else{
             console.log("Error mes de 1 punt.");
             alert("Recorda només pots posar 1 punt.");
@@ -37,12 +35,12 @@ function disPunt(val){
 function operacio(val){
     console.log(" Operacions abans", operadors.length, operacions.length);
 
-      if ( operadors.length  == (operacions.length +1) ){
+      if ( operadors.length  === (operacions.length +1) ){
             console.log("operacions despres", operadors.length, operacions.length);
             console.log("error massa operacions");
       }else{
 
-          if (operadorActual != "") {
+          if (operadorActual !== "") {
               operadors.push(operadorActual);
               operacions.push(val);
           }else{
@@ -62,13 +60,13 @@ function resoldre(){
                 operacioCompleta = operadorActual + operacions;
                 operacioCompleta += operadorActual;
                 resultatTemp = eval(operacioCompleta);
-                document.getElementById("resultat").value = resultatTemp;
+                document.getElementById("resultatCientific").value = resultatTemp;
             }else{
                 operacioCompleta = operadors + operacions;
                 operacioCompleta += operadorActual;
 
                 resultatTemp = eval(operacioCompleta);
-                document.getElementById("resultat").value = resultatTemp;
+                document.getElementById("resultatCientific").value = resultatTemp;
                 //resultat += y;
                 console.log("operacioCompleta: ",operacioCompleta);
                 console.log("operadors: ",operadors);
@@ -82,34 +80,49 @@ function resoldre(){
           operadors=[];
 }
 
-var val = 0.0;
-function percent(input) {
-  val = input.value;
-  input.value = input.value + "%";
+
+function sqrt() {
+  operadors=[];
+  var resultat = Math.sqrt(operadorActual);
+  document.getElementById("resultatCientific").value = resultat;
+  operadorActual=resultat;
+  console.log(operadors);
+  //operacions.push(val);
 }
 
 
-function changeSign(input) {
-	if(input.value.substring(0, 1) == "-")
-		input.value = input.value.substring(1, input.value.length)
-	else
-		input.value = "-" + input.value
+
+function cos() {
+  operadors=[];
+  var resultat = Math.cos(operadorActual);
+  document.getElementById("resultatCientific").value = resultat;
+  operadorActual=resultat;
+  console.log(operadors);
+
 }
 
-
-function dividir(val) {//agafe tots els numeros anteriors al signe de dividir.
-  //Comprobar longitud
-  operadorActual += val;
-  operadorActual.lengh < max_length;
-  console.log("estem a la funcio dividir",operadorActual);
-  document.getElementById("resultat").value = operadorActual;
+function sin(form) {
+  operadors=[];
+  var resultat = Math.sin(operadorActual);
+  document.getElementById("resultatCientific").value = resultat;
+  operadorActual=resultat;
+  console.log(operadors);
 }
+
+function tan() {
+  operadors=[];
+  var resultat = Math.tan(operadorActual);
+  document.getElementById("resultatCientific").value = resultat;
+  operadorActual=resultat;
+  console.log(operadors);
+}
+
 
 //neteijem la pantalla de la calculadora.
 function clr(){
-        document.getElementById("resultat").value = ""
+        document.getElementById("resultatCientific").value = "";
         operadorActual="";
-        operadors = []
+        operadors = [];
         operacions = [];
 }
 
@@ -140,9 +153,9 @@ function guardar() {
 function carregar() {
   var alc = localStorage.getItem("alcada");
   var amp = localStorage.getItem("amplada");
-  var taula = document.getElementById("taulaCalculadora");
-  taula.style.background-position-x = alc+"px";
-  taula.style.background-position-y = amp+"px";
+  var taula = document.getElementById("taulaCalculadoraCientifica");
+  taula.style.bottom = alc+"px";
+  taula.style.left = amp+"px";
 
   document.getElementById("alcada").value = alc;
   document.getElementById("amplada").value = amp;
