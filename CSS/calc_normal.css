@@ -21,7 +21,17 @@ div{
     z-index: 1;
     border-style: dotted;
 }
-
+#resultat {
+  width: 320px;
+  height: 40px;
+  text-align: right;
+  background-color: black;
+  border: 3px solid white;
+  font-size: 18px;
+  left: 2px;
+  top: 2px;
+  color: #7fff00;
+}
 section #taulaCalculadora{
   table-layout: auto;
   margin-top: 1%;
@@ -32,6 +42,8 @@ section #taulaCalculadora{
   bottom : 200px;
   left: 20px;
   background-color: #c2c2c2;
+  box-shadow: 0px 0px 0px 10px #666;
+  border: 2px solid black;
   z-index: 2;
 }
 h1{
