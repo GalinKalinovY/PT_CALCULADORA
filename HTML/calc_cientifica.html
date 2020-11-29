@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta http−equiv="content−type" content="text/html; charset=utf−8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A brief page description">
+      <meta name="keywords" content="html,cheatsheet" />
+      <meta property="fb:admins" content="YourFacebookUsername"/>
+      <!-- aqui tindrem els imports que creguem oportus. -->
+      <title>CALCULADORA NORMAL</title>
+      <link rel="stylesheet" href="../CSS/normalized.css">
+      <link rel="stylesheet" href="../CSS/calc_cientifica.css">
+      <script src="../JS/calc_cientifica.js" type="text/javascript"></script>
+    </head>
+    <body>
+      <div>
+        <h1>Calculadora Cientifica</h1>
+          <!-- Demanem els valors-->
+          <h3>Canviar les propietats de la taula:</h3>
+        <form>
+          <input type="text"  placeholder="Alçada" id="alcada">
+          <br/>
+          <input type="text"  placeholder="Amplada" id="amplada"><br/>
+        </form>
+
+        <button onclick="guardar()">Guardar</button>
+        <button onclick="carregar()">Carregar</button>
+        <br><br>
+        <button onclick="window.history.back();"> < </button>
+        <button onclick="window.history.forward();"> > </button>
+        <br><br>
+    </div>
+      <section>
+      <!-- Comença la taula de la calculadora-->
+        <table  id="taulaCalculadora">
+             <tr>
+                <td colspan="3"><input type="text" id="resultat"/></td>
+
+                <!-- clr() sera una funcio que esborri el valor de la casella -->
+                <td><input type="button" value="c" onclick="clr()"/> </td>
+             </tr>
+             <tr>
+                <!-- creem els botons i assignem un valor a cada. -->
+                <!-- dis("val") agafara el valor del boto que sa clicat i ho mostrara percent(this.form.display)-->
+                <td><input type="button" value="1" onclick="dis('1')"/> </td>
+                <td><input type="button" value="2" onclick="dis('2')"/> </td>
+                <td><input type="button" value="3" onclick="dis('3')"/> </td>
+                <td><input type="button" value="/" onclick="operacio('/')"/> </td>
+                <td><input type="button" value="%" onclick="percent('%')"/> </td>
+             </tr>
+             <tr>
+                <td><input type="button" value="4" onclick="dis('4')"/> </td>
+                <td><input type="button" value="5" onclick="dis('5')"/> </td>
+                <td><input type="button" value="6" onclick="dis('6')"/> </td>
+                <td><input type="button" value="-" onclick="operacio('-')"/> </td>
+                <td><input type="button" value="/" onclick="changeSign('')"/> </td>
+             </tr>
+             <tr>
+                <td><input type="button" value="7" onclick="dis('7')"/> </td>
+                <td><input type="button" value="8" onclick="dis('8')"/> </td>
+                <td><input type="button" value="9" onclick="dis('9')"/> </td>
+                <td><input type="button" value="+" onclick="operacio('+')"/> </td>
+                <td><input type="button" value="/" onclick="changeSign('')"/> </td>
+             </tr>
+             <tr>
+                <td><input type="button" value="." onclick="disPunt('.')"/> </td>
+                <td><input type="button" value="0" onclick="dis('0')"/> </td>
+                <!-- la funsio resoldre ens servira per aconseguir el resultat dels valors -->
+                <td><input type="button" value="=" onclick="resoldre()"/> </td>
+                <td><input type="button" value="*" onclick="operacio('*')"/> </td>
+                <td><input type="button" value="/" onclick="changeSign('')"/> </td>
+             </tr>
+          </table>
+      </section>
+
+      </body>
+</html>

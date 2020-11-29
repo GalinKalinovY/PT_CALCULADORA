@@ -1,22 +1,15 @@
-//var maximCaracters = [];//arraylist on tindrem els valors clicats
+
 
 var operadors = [];//arraylist on tindrem els valors clicats
 var operacions =[];//arraylist on tinrem les operacions
 var operadorActual="";
 const max_length = 5;
-var operacioCompleta = [];
-
-var resultatOperacio = [];
+var operacioCompleta = [];//guardarem tots els operadors i operacions per poder ver el eval().
+var resultatOperacio = [];//guardem el resultat de la operacioCompleta.
 
 
 function dis(val){
   //el parametre val aporta el valor que hem clicat en cada boto.
-  //document.getElementById("resultat").value+=val
-
-  //var maximCaracters = document.getElementById("resultat").value
-
-
-//controlar numero punts 50. 50.64
 
     if (operadorActual.length < max_length) { //si hi ha mes de 5 caracters
           operadorActual += val;
@@ -89,6 +82,21 @@ function resoldre(){
           operadors=[];
 }
 
+var val = 0.0;
+function percent(input) {
+  val = input.value;
+  input.value = input.value + "%";
+}
+
+
+function changeSign(input) {
+	if(input.value.substring(0, 1) == "-")
+		input.value = input.value.substring(1, input.value.length)
+	else
+		input.value = "-" + input.value
+}
+
+
 function dividir(val) {//agafe tots els numeros anteriors al signe de dividir.
   //Comprobar longitud
   operadorActual += val;
@@ -141,22 +149,3 @@ function carregar() {
   localStorage.clear();
 
 }
-
-
-/*
-  function dis(val){
-    //el parametre val aporta el valor que hem clicat en cada boto.
-    //document.getElementById("resultat").value+=val
-
-     var maximCaracters = document.getElementById("resultat").value
-
-
-      if (maximCaracters.length >= 5) { //si hi ha mes de 5 caracters
-        alert("Error el numero maxim de caracters que pots introduïr es de 5");
-        //clr();
-      }else{
-        document.getElementById("resultat").value+=val
-      }
-
-  }
-*/
