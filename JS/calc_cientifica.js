@@ -9,7 +9,7 @@ var resultatOperacio = [];//guardem el resultat de la operacioCompleta.
 function dis(val){
   //el parametre val aporta el valor que hem clicat en cada boto.
 
-    if (operadorActual.length < max_length) { //si hi ha mes de 5 caracters
+    if (operadorActual.length < max_length || operadorActual.length===undefined) { //si hi ha mes de 5 caracters
           operadorActual += val;
           document.getElementById("resultatCientific").value = operadorActual;
     }else{

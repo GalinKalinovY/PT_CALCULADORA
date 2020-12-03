@@ -19,7 +19,7 @@ function dis(val){
 
 //controlar numero punts 50. 50.64
 
-    if (operadorActual.length < max_length) { //si hi ha mes de 5 caracters
+    if (operadorActual.length < max_length || operadorActual.length===undefined) { //si hi ha mes de 5 caracters
           operadorActual += val;
           document.getElementById("resultat").value = operadorActual;
     }else{
@@ -55,7 +55,7 @@ function operacio(val){
               operacions.push(val);
           }else{
               console.log("operadorActual 0 ",operadorActual);
-              alert("Massa operacions clicades!.");
+              //alert("Massa operacions clicades!.");
           }
             operadorActual="";
             console.log("hem clicat operacio", operadors, " ,,",operacions, " ,,",operadorActual);
